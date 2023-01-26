@@ -15,6 +15,13 @@ namespace Lab_Creating_Classes
         private int age;
         private bool isWorking;
 
+        public int PersonId { get => personId; }
+        public string FirstName { get => firstName; }
+        public string LastName { get => lastName; }
+        public string FavoriteColour { get => favoriteColour; }
+        public int Age { get => age; }
+        public bool IsWorking { get => isWorking; }
+
         public Person(int personId, string firstName, string lastName, string favoriteColour, int age, bool isWorking)
         {
             this.personId = personId;
@@ -25,28 +32,10 @@ namespace Lab_Creating_Classes
             this.isWorking = isWorking;
         }
 
-        public string DisplayPersonInfo(string str="")
+        public static void DisplayPersonInfo(Person p)
         {
-            switch (str)
-            {
-                case "id":
-                    return this.personId.ToString();
-                case "fName":
-                    return this.firstName;
-                case "lName":
-                    return this.lastName;
-                case "fColour":
-                    return this.favoriteColour;
-                case "age":
-                    return this.age.ToString();
-                case "isWorking":
-                    return this.isWorking.ToString();
-                case "name":
-                    return this.firstName+" "+this.lastName;
-                default:
-                    return $"{this.personId}: {this.firstName} {this.lastName}'s favorite colour is {this.favoriteColour}";
-            }
 
+            Console.WriteLine($"{p.personId}: {p.firstName} {p.lastName}'s favorite colour is {p.favoriteColour}");
         }
 
         public void ChangeFavoriteColour()
@@ -56,7 +45,7 @@ namespace Lab_Creating_Classes
 
         public int GetAgeInTenYears()
         {
-            return this.age+10;
+            return this.age + 10;
         }
 
         public override string ToString()

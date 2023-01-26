@@ -19,6 +19,8 @@ namespace Lab_Creating_Classes
         private Person secondPerson;
         private RelationshipType relationship;
 
+        public Person FirstPerson { get => firstPerson; }
+        public Person SecondPerson { get => secondPerson; }
 
         public Ralation(Person firstPerson, Person secondPerson, RelationshipType relationship)
         {
@@ -27,28 +29,21 @@ namespace Lab_Creating_Classes
             this.relationship = relationship;
         }
 
-        public void ShowRelationShip()
+        public string ShowRelationShip()
         {
-            string hood;
             switch (this.relationship)
             {
                 case RelationshipType.Sister:
-                    hood = "Sisterhood";
-                    break;
+                    return "Sisterhood";
                 case RelationshipType.Brother:
-                    hood = "Brotherhood";
-                    break;
+                    return "Brotherhood";
                 case RelationshipType.Mother:
-                    hood = "Motherhood";
-                    break;
+                    return "Motherhood";
                 case RelationshipType.Father:
-                    hood = "Fatherhood";
-                    break;
+                    return "Fatherhood";
                 default:
-                    hood = "Unknow";
-                    break;
+                    return "Unknow";
             }
-            Console.WriteLine($"Relationship between {firstPerson.DisplayPersonInfo("fName")} and {secondPerson.DisplayPersonInfo("fName")} is: {hood}");
         }
     }
 }
